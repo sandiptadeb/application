@@ -1,0 +1,17 @@
+<div *ngIf = "whichBox ==='inbox'" style="border: 1px solid">
+     <div style="background: #EFEFEF">Mails between {{heading}}</div>
+     <hr>
+     <div><span style="color: blue">subject:</span>{{email.subject}}</div>
+     <div style="color: #ff3d00">{{email.body}}</div>
+</div>
+<div *ngIf = "whichBox ==='sent items'" style="border: 1px solid">
+    <div style="background: #EFEFEF">Mails between {{heading}}</div>
+    <hr>
+    <div *ngFor="let d of email">
+        <p> <span style="color: blue">from:</span> {{d.from}} </p>
+        <p><span style="color: blue">to:</span>  {{d.to}} </p>
+        <p> <span style="color: blue">subject:</span> {{d.subject}} </p>
+        <p style="color: #ff3d00">  {{d.body}} </p>
+        <hr>
+    </div>
+</div>
